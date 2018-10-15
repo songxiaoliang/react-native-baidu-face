@@ -200,81 +200,95 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 ##### iOS配置流程
 
 1. 下载SDK，以及 license
-￼
+￼<img src='http://oleeed73x.bkt.clouddn.com/9F02D37F-10AD-41C6-867D-E2789B65BD8A.png' /> 
+
 下载SDK分为自动配置授权信息（创建license后就可以选择为该应用，下载后SDK自动帮您配置授权，不用下载license拷贝到工程中，初始化参数licenseID,包名也帮您配置好了）和未配置授权信息两种方式：
-￼
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/6158699B-5E62-4ADF-B331-405C846ACDF9.jpeg' /> 
 
 1.2 运行示例工程
+
 1.2.1 自动配置授权信息集成
+
 如果您是通过自动配置授权信息下载的示例工程，只需配置好证书即可。查看下项目中的FaceParameterConfig.h文件，已经自动配置
-￼
+￼<img src='￼￼http://oleeed73x.bkt.clouddn.com/B67A2744-7A75-4443-88FD-253B0219855D.png' /> 
+
 配置好证书，即可运行。注意已经设置好的bundle id不要随意改动。
-—————————————————————————————————————————————————————————————————————
+
 下面截图为下载官网SDK后解压的文件
-￼
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic.tiff' /> 
 
-打开红色截图的文件(IDLFaceSDKDemoOC.xcodeproj) 
-
-打开之后，配置一下项目的证书
-
-￼
-
-
+打开红色截图的文件(IDLFaceSDKDemoOC.xcodeproj) ,打开之后，配置一下项目的证书
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic%201.tiff' /> 
 
 到此如果运行成功了，则代表以上准备的东西没问题了，接下来就可以把SDK集成到我们自己的项目。
 
-先去官网下载SDK，注意现在下载的SDK是 未配置授权信息 的版本！！！！
+先去官网下载SDK，注意现在下载的SDK是 未配置授权信息 的版本！！！！然后再看以下教程
 
-然后再看以下教程
-—————————————————————————————————————————————————————————————————————
 1.2.2 未使用自动配置授权信息的集成
+
 打开或者新建一个项目。
 右键点击项目，会出现一个添加菜单，在菜单中选择『Add Files to“此处是你的项目名字”…… 』,如下图所示：
-￼
+￼<img src='￼￼http://oleeed73x.bkt.clouddn.com/71B0573D-F5A9-4790-A3B9-5F1418DFA9C4.png' />
+
 1.3 添加SDK到工程
-	1.	打开或者新建一个项目。
-	2.	右键点击项目，会出现一个添加菜单，在菜单中选择『Add Files to“此处是你的项目名字”…… 』,如下图所示：
-	3.	在添加文件弹出框里面选择申请到的license和SDK添加进来。如下图：
-注意：license为百度官方提供的。
-SDK包含下面三个文件:
+```xml
+1.打开或者新建一个项目。
+2.右键点击项目，会出现一个添加菜单，在菜单中选择『Add Files to“此处是你的项目名字”…… 』,如下图所示：
+3.在添加文件弹出框里面选择申请到的license和SDK添加进来。如下图：
+	注意：license为百度官方提供的。
+	SDK包含下面三个文件:
 	•	IDLFaceSDK.framework
 	•	com.baidu.idl.face.faceSDK.bundle
 	•	com.baidu.idl.face.model.bundle
-￼
-	4.	确认下Bundle Identifier 是否是申请license时填报的那一个，注意：license和Bundle Identifier是一一对应关系，填错了会导致SDK不能用。
-	￼
-	6.	填写正确的FACE_LICENSE_ID。（即后台展示的LicenseID）
+```
+￼<img src='￼￼http://oleeed73x.bkt.clouddn.com/A514F810-7BA2-4035-B32D-132725D45665.png' />
+```xml
+4.确认下Bundle Identifier 是否是申请license时填报的那一个，注意：license和Bundle Identifier是一一对应关系，填错了会导致SDK不能用。
+```
+<img src='￼http://oleeed73x.bkt.clouddn.com/4BDF5F45-8389-4742-A1AB-6319022DB5FF.png' />
+
+```xml
+5.填写正确的FACE_LICENSE_ID。（即后台展示的LicenseID）
 在FaceParameterConfig.h文件里面填写拼接好的FACE_LICENSE_ID。
-￼
-	6.	选择链接C++标准库。
-￼
-	7.	如果没有使用pod管理第三方库的话，请在Build Setting >Linking > Other Linker Flags 上面加入 –ObjC 选项。如果用了pod请忽略，因为pod会自动添加上。
-￼
+```
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/22018BA5-BA42-49E1-B7A2-CE33698ABC45.png' />
+```xml
+6.选择链接C++标准库。
+```
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/5C9FD018-EF80-48F2-A8AD-908564C8BDB7.png' />
+```xml
+7.如果没有使用pod管理第三方库的话，请在Build Setting >Linking > Other Linker Flags 上面加入 –ObjC 选项。如果用了pod请忽略，因为pod会自动添加上。
+```
+￼￼<img src='￼http://oleeed73x.bkt.clouddn.com/4442E8C9-EDC3-447E-930A-F69C925994FA.png' />
+
 1.5 权限声明
+
 需要使用相机权限：编辑Info.plist文件，添加 Privacy- Camera Usage Description 的Key值，Value为使用相机时候的提示语，可以填写：『使用相机』。
-￼
-—————————————————————————————————————————————————————————————————————
+<img src='￼http://oleeed73x.bkt.clouddn.com/2B548194-134D-4199-AB41-920E85EB0446.png' />
+
 关于SDK的位置，可以直接复制SDK中的整个文件夹
+<img src='￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic%203.tiff' />
 ￼
 SDK放在项目的位置可以发在iOS项目的根目录先：
-￼
-—————————————————————————————————————————————————————————————————————
+<img src='￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic%204.tiff' />
 
 2. 集成RN桥接文件
 
-复制demo中的四个文件和一个文件夹
-￼
+复制iOS工程中的四个文件和一个文件夹
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic%205.tiff' />
 
 在文件夹中选择这几个文件
-
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/1__%23$%21@%25%21%23__Pasted%20Graphic.tiff' />
 
 然后拉进项目中，弹窗的选项如下：
-
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/1__%23$%21@%25%21%23__Pasted%20Graphic%201.tiff' />
 
 点击 finish即可。
 
 最后，再项目的 AppDelegate.m 文件中添加SDK的初始化代码
-￼
+￼<img src='￼￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic%206.tiff' />
+
+```ios
 #import "IDLFaceSDK/IDLFaceSDK.h"
 #import "FaceParameterConfig.h"
 
@@ -283,7 +297,7 @@ SDK放在项目的位置可以发在iOS项目的根目录先：
   NSAssert([[NSFileManager defaultManager] fileExistsAtPath:licensePath], @"license文件路径不对，请仔细查看文档");
   [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
   NSLog(@"canWork = %d",[[FaceSDKManager sharedInstance] canWork]);
-  
+```
 至此，iOS原生的代码集成完毕。更多详情可参考官方文档：https://ai.baidu.com/docs#/Face-iOS-SDK/top
 
 
