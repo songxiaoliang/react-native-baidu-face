@@ -383,4 +383,7 @@ faceCheckCallback(data) {
 ```
 
 
-人脸识别模块基于Native层进行封装，即要从Native层进行配置。关于配置的详细流程可以参考百度人脸识别SDK官方文档。
+人脸识别模块基于Native层进行封装，即要从Native层进行配置。关于配置的详细流程可以参考百度人脸识别SDK官方文档：
+```xml
+https://ai.baidu.com/docs#/Face-Android-SDK/top
+```
