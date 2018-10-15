@@ -200,7 +200,7 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 
 
 
-##### iOS配置流程
+##### iOS配置流程(开发者：jaydenin)
 
 ###### 1. 下载SDK，以及 license
 ￼<img src='http://oleeed73x.bkt.clouddn.com/9F02D37F-10AD-41C6-867D-E2789B65BD8A.png' /> 
