@@ -1,6 +1,9 @@
 # react-native-baidu-face
 基于百度人脸识别封装的RN模块，支持Android、iOS平台设备
 
+### 效果图
+￼<img src='￼http://oleeed73x.bkt.clouddn.com/Screenshot_20181015-115602.jpg' /> 
+
 #### 配置
 
 ##### Android配置流程
