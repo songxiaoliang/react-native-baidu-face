@@ -1,9 +1,9 @@
 # react-native-baidu-face
 基于百度人脸识别封装的RN模块，支持Android、iOS平台设备
 
-##### 一、配置
+#### 一、配置
 
-###### Android配置流程
+##### Android配置流程
 
 1. 下载SDK。
 2. 下载 license，拷贝到工程的assets目录。
@@ -91,7 +91,7 @@ import java.util.List;
 public class MainApplication extends Application implements ReactApplication {
 
   private static MainApplication mainApplication;
-  private static final BaiduFacePackage baiduFacePackage = new BaiduFacePackage();
+  private static final BaiduFacePackage baiduFacePackage = new BaiduFacePackage(); // 创建package实例
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -103,7 +103,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          baiduFacePackage
+          baiduFacePackage //注册 package
       );
     }
 
@@ -128,7 +128,10 @@ public class MainApplication extends Application implements ReactApplication {
   public static Application getApplication() {
     return mainApplication;
   }
-
+	
+  /**
+   * 获取人脸识别package实例
+   */
   public static BaiduFacePackage getBaiduFacePackage() {
     return baiduFacePackage;
   }
@@ -139,14 +142,19 @@ public class MainApplication extends Application implements ReactApplication {
 8. 配置签名文件
 
 1.生成签名Keystore文件，并将keystore签名文件放到android/app根目录下
+
+```xml
 keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+```
 
 2.在gradle.properties文件下增加常量标识
 
+```xml
 MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
 MYAPP_RELEASE_KEY_ALIAS=my-key-alias // 改为对应名称
 MYAPP_RELEASE_STORE_PASSWORD=123456 // 改为对应密码
 MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
+```
 
 3.在app的build.gradle下的增加如下配置
 
@@ -180,13 +188,16 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 ```
 
 5.进入android目录，终端执行如下命令：
+
+```xml
 ./gradlew assembleRelease
+```
 
 以上执行完后，apk文件会生成在android/app/build/outputs/apk/目录下。（每次打包之前，将之前的apk文件删除）
 
 
 
-iOS配置流程
+##### iOS配置流程
 
 1. 下载SDK，以及 license
 ￼
