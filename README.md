@@ -1,7 +1,7 @@
 # react-native-baidu-face
 基于百度人脸识别封装的RN模块，支持Android、iOS平台设备
 
-#### 一、配置
+#### 配置
 
 ##### Android配置流程
 
@@ -287,19 +287,21 @@ SDK放在项目的位置可以发在iOS项目的根目录先：
 至此，iOS原生的代码集成完毕。更多详情可参考官方文档：https://ai.baidu.com/docs#/Face-iOS-SDK/top
 
 
-
-React Native使用
+#### React Native 使用
 
 1.引入平台module
 
+```javascript
 const FaceCheckHelper = Platform.select({
     android: ()=> NativeModules.PushFaceViewControllerModule,
     ios: ()=> NativeModules.RNIOSExportJsToReact
 })();
 const NativeModule = new NativeEventEmitter(FaceCheckHelper);
+```
 
 2. 启动采集界面
 
+```javascript
  let obj = {
             //质量校验设置
             'quality':{
@@ -331,37 +333,40 @@ const NativeModule = new NativeEventEmitter(FaceCheckHelper);
         // FaceCheckHelper.openPushFaceViewController( obj );
         // 如果都不设置，需要传 {} 空对象， 建议设置 liveActionArray
         FaceCheckHelper.openPushFaceViewController( {} );
+```
 
-3. 注册监听，接收采集结果
+3. 注册监听，接收采集结果(收集结果为base64图片格式)
 
+```javascript
 componentDidMount() {
-        NativeModule.addListener('FaceCheckHelper', (data) => this.faceCheckCallback(data));
+   NativeModule.addListener('FaceCheckHelper', (data) => this.faceCheckCallback(data));
 }
-    /**
-     * 人脸检测结果
-     */
-    faceCheckCallback(data) {
-        this.setState({
-            text: Object.keys(data)
-        })
-        if (data.remindCode == 0){
-            let imagesArray = [];
-            let imagesName = Object.keys(data.images); // bestImage liveEye liveYaw liveMouth yawRight yawLeft pitchUp pitchDown
-             imagesName.map((info,index) =>{
-                imagesArray.push(
-                    <View key={index} style={{margin:50}}>
-                        <Image
-                            style={{width:180, height: 320, backgroundColor:'red'}}
-                            source={{uri:'data:image/jpg;base64,'+ data.images[info]}}/>
-                        <Text>{info}</Text>
-                    </View>
-                )
-             })
-            this.setState({imagesArray})
-        } else if (data.remindCode == 36) {
-            alert('采集超时');
-        }
-    }
+/**
+* 人脸检测结果
+*/
+faceCheckCallback(data) {
+	this.setState({
+		text: Object.keys(data)
+	});
+	if (data.remindCode == 0){
+	    let imagesArray = [];
+	    let imagesName = Object.keys(data.images); // bestImage liveEye liveYaw liveMouth yawRight yawLeft pitchUp pitchDown
+	     imagesName.map((info,index) =>{
+		imagesArray.push(
+		    <View key={index} style={{margin:50}}>
+			<Image
+			    style={{width:180, height: 320, backgroundColor:'red'}}
+			    source={{uri:'data:image/jpg;base64,'+ data.images[info]}}/>
+			<Text>{info}</Text>
+		    </View>
+		)
+	     })
+	    this.setState({imagesArray})
+	} else if (data.remindCode == 36) {
+	    alert('采集超时');
+	}
+}
+```
 
 
 人脸识别模块基于Native层进行封装，即要从Native层进行配置。关于配置的详细流程可以参考百度人脸识别SDK官方文档。
