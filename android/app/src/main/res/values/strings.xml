@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">百度人脸识别</string>
+    <string name="splash_text">Face Recognition</string>
+    <string name="main_item_face_register">人脸注册</string>
+    <string name="main_item_face_recognition">人脸识别 1v1</string>
+    <string name="main_item_face_recognition_n">人脸识别 1vN</string>
+    <string name="main_item_face_recognition_id">人脸识别 公安验证</string>
+    <string name="main_item_face_live">活体检测</string>
+    <string name="main_item_face_detect">人脸图像采集</string>
+    <string name="main_item_face_lite">人脸图像验证</string>
+    <string name="main_item_face_bank_cards">银行卡</string>
+    <string name="main_item_face_id_cards">身份证</string>
+    <string name="main_item_face_delete">删除功能</string>
+    <string name="play">play</string>
+    <string name="stop_playback">stop playback</string>
+    <string name="stop">stop</string>
+    <string name="record">record</string>
+    <string name="stop_recording">stop recording</string>
+    <string name="zero">0</string>
+</resources>

@@ -1,0 +1,6 @@
+rootProject.name = 'faceTest'
+
+include ':app'
+include ':faceplatform-ui'
+include ':faceplatform'
+

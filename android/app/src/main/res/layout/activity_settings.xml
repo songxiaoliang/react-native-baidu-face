@@ -1,0 +1,136 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/settings_liveness_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/settings_liveness_title"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="活体检测类型"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/settings_liveness_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:checked="false"
+                    android:gravity="left|center_vertical"
+                    android:text="随机顺序"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/settings_liveness_cb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="left|center_vertical"
+                android:text="眨眨眼"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/settings_liveness_cb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="left|center_vertical"
+                android:text="张大嘴"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/settings_liveness_cb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="left|center_vertical"
+                android:text="向上抬头"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/settings_liveness_cb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="left|center_vertical"
+                android:text="向下低头"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/settings_liveness_cb5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="left|center_vertical"
+                android:text="向左摇头"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/settings_liveness_cb6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="left|center_vertical"
+                android:text="向右摇头"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/settings_liveness_cb7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="left|center_vertical"
+                android:text="摇摇头"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/settings_liveness_index"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="left|center_vertical"
+                android:hint="选择活体检测动作"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
