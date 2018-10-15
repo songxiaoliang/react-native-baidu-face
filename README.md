@@ -10,10 +10,12 @@
 3. 修改Config类，配置对应ID，key，name 等。
 4. 添加sdk到项目工程：
 
+```xml
 （1）将开发包中的faceplatform-release库Copy 到工程根目录。
 （2）将开发包中的faceplatform-ui库Copy 到工程根目录。
 （3）在build.gradle使用compile project引人faceplatform-ui库工程。
 （4）Setting.gradle中include faceplatfrom-ui和facepaltfrom-release
+```
 
 5. 在AndroidManifest.xml文件的<manifest>标签下配置权限，Feature 声明：
   
