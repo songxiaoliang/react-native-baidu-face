@@ -199,13 +199,13 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 
 ##### iOS配置流程
 
-1. 下载SDK，以及 license
+###### 1. 下载SDK，以及 license
 ￼<img src='http://oleeed73x.bkt.clouddn.com/9F02D37F-10AD-41C6-867D-E2789B65BD8A.png' /> 
 
 下载SDK分为自动配置授权信息（创建license后就可以选择为该应用，下载后SDK自动帮您配置授权，不用下载license拷贝到工程中，初始化参数licenseID,包名也帮您配置好了）和未配置授权信息两种方式：
 ￼<img src='￼http://oleeed73x.bkt.clouddn.com/6158699B-5E62-4ADF-B331-405C846ACDF9.jpeg' /> 
 
-1.2 运行示例工程
+######  1.2 运行示例工程
 
 1.2.1 自动配置授权信息集成
 
@@ -230,7 +230,7 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 右键点击项目，会出现一个添加菜单，在菜单中选择『Add Files to“此处是你的项目名字”…… 』,如下图所示：
 ￼<img src='￼￼http://oleeed73x.bkt.clouddn.com/71B0573D-F5A9-4790-A3B9-5F1418DFA9C4.png' />
 
-1.3 添加SDK到工程
+###### 1.3 添加SDK到工程
 ```xml
 1.打开或者新建一个项目。
 2.右键点击项目，会出现一个添加菜单，在菜单中选择『Add Files to“此处是你的项目名字”…… 』,如下图所示：
@@ -261,7 +261,7 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 ```
 ￼￼<img src='￼http://oleeed73x.bkt.clouddn.com/4442E8C9-EDC3-447E-930A-F69C925994FA.png' />
 
-1.5 权限声明
+###### 1.4 权限声明
 
 需要使用相机权限：编辑Info.plist文件，添加 Privacy- Camera Usage Description 的Key值，Value为使用相机时候的提示语，可以填写：『使用相机』。
 <img src='￼http://oleeed73x.bkt.clouddn.com/2B548194-134D-4199-AB41-920E85EB0446.png' />
@@ -272,7 +272,7 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 SDK放在项目的位置可以发在iOS项目的根目录先：
 <img src='￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic%204.tiff' />
 
-2. 集成RN桥接文件
+##### 2. 集成RN桥接文件
 
 复制iOS工程中的四个文件和一个文件夹
 ￼<img src='￼http://oleeed73x.bkt.clouddn.com/Pasted%20Graphic%205.tiff' />
@@ -303,7 +303,7 @@ SDK放在项目的位置可以发在iOS项目的根目录先：
 
 #### React Native 使用
 
-1.引入平台module
+###### 1.引入平台module
 
 ```javascript
 const FaceCheckHelper = Platform.select({
@@ -313,7 +313,7 @@ const FaceCheckHelper = Platform.select({
 const NativeModule = new NativeEventEmitter(FaceCheckHelper);
 ```
 
-2. 启动采集界面
+###### 2. 启动采集界面
 
 ```javascript
  let obj = {
@@ -349,7 +349,7 @@ const NativeModule = new NativeEventEmitter(FaceCheckHelper);
         FaceCheckHelper.openPushFaceViewController( {} );
 ```
 
-3. 注册监听，接收采集结果(收集结果为base64图片格式)
+###### 3. 注册监听，接收采集结果(收集结果为base64图片格式)
 
 ```javascript
 componentDidMount() {
