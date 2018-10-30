@@ -15,7 +15,7 @@ import {
 
 const FaceCheckHelper = NativeModules.PushFaceViewControllerModule;
 const FaceCheckModules = Platform.select({
-    android: ()=> NativeModules.PushFaceViewControllerModule,
+    android: ()=> FaceCheckHelper,
     ios: ()=> NativeModules.RNIOSExportJsToReact
 })();
 const NativeModule = new NativeEventEmitter(FaceCheckModules);
