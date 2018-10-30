@@ -69,6 +69,7 @@ RCT_EXPORT_METHOD(openPushFaceViewController:(NSDictionary*)dict) {
   nav.navigationBarHidden = true;
   AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
   [app.window.rootViewController presentViewController:nav animated:YES completion:nil];
+  [app.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
   
 }
 - (void)LivenessViewController:(NSDictionary *)images code:(NSInteger) remindCode{
