@@ -73,7 +73,7 @@
 ```
 6. 将 android/app/src/main/res/values/styles.xml 文件替换自己工程的styles.xml
 
-7. 将 android/app/src/main/res/layout/widget_face_dialog.xml 复制到自己工程 layout 文件夹下
+7. 将 android/app/src/main/res/layout/widget_face_dialog.xml、activity_settings.xml 复制到自己工程 layout 文件夹下
 
 8. 倒入人脸识别封装模块：
     将baiduface文件夹拖到项目包名目录下（例如：com.xxx）
