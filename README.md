@@ -71,10 +71,12 @@
     android:screenOrientation="portrait"
     android:theme="@style/Theme_NoTitle" />
 ```
-6. 倒入人脸识别封装模块：
+6. 将 android/app/src/main/res/values/styles.xml 文件替换自己工程的styles.xml
+
+7. 倒入人脸识别封装模块：
     将baiduface文件夹拖到项目包名目录下（例如：com.xxx）
 
-7. 配置Application
+8. 配置Application
 
 ```java
 package com.facetest;
@@ -142,7 +144,7 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-8. 配置签名文件
+9. 配置签名文件
 
 1.生成签名Keystore文件，并将keystore签名文件放到android/app根目录下
 
@@ -190,7 +192,7 @@ MYAPP_RELEASE_KEY_PASSWORD=123456 // 改为对应密码
 	26.	}
 ```
 
-5.进入android目录，终端执行如下命令：
+10.进入android目录，终端执行如下命令：
 
 ```xml
 ./gradlew assembleRelease
