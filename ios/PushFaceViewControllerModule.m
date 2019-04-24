@@ -69,7 +69,8 @@ RCT_EXPORT_METHOD(openPushFaceViewController:(NSDictionary*)dict) {
   nav.navigationBarHidden = true;
   AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
   [app.window.rootViewController presentViewController:nav animated:YES completion:nil];
-  [app.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+  // 这个地方之前代码应该是有问题  会在打开人俩识别窗口后马上关闭 注释掉即可正常执行人脸识别流程
+  //[app.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
   
 }
 - (void)LivenessViewController:(NSDictionary *)images code:(NSInteger) remindCode{
