@@ -39,6 +39,7 @@ public class BaiduFaceModule extends ReactContextBaseJavaModule implements Permi
     private Activity mActivity;
     private ReactApplicationContext mContext;
     private static final String GET_RESULT_EVENT = "FaceCheckHelper";
+     private static final String GET_DETECT_RESULT_EVENT = "DetectFaceCheckHelper";
     private static final String BAIDU_FACE_MODULE_NAME = "PushFaceViewControllerModule";
 
     public BaiduFaceModule(ReactApplicationContext reactContext) {
@@ -77,6 +78,13 @@ public class BaiduFaceModule extends ReactContextBaseJavaModule implements Permi
      */
     public void sendFaceCheckBase64Img(WritableMap faceCheckResult) {
         mContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(GET_RESULT_EVENT, faceCheckResult);
+    }
+    
+    /**
+     * 获取人脸固定采集检测图片结果（Base64），传递到react native
+     */
+    public void sendFaceDetectExpBase64Img(WritableMap faceCheckResult) {
+        mContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(GET_DETECT_RESULT_EVENT, faceCheckResult);
     }
 
     /**
