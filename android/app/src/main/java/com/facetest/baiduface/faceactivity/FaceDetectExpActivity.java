@@ -3,11 +3,15 @@ package com.facetest.baiduface.faceactivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import android.util.Log;
+import com.facetest.MainApplication;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.WritableMap;
+import com.facetest.baiduface.widget.DefaultDialog;
 import com.baidu.idl.face.platform.FaceStatusEnum;
 import com.baidu.idl.face.platform.ui.FaceDetectActivity;
-import com.facetest.baiduface.widget.DefaultDialog;
-
-import java.util.HashMap;
 
 /**
  * 人脸图像采集
@@ -59,7 +63,7 @@ public class FaceDetectExpActivity extends FaceDetectActivity {
             }
 
             faceCheckResult.putMap("images", faceCheckImgsResult);
-            MainApplication.getBaiduFacePackage().getBaiduFaceModule().sendFaceCheckBase64Img(faceCheckResult);
+            MainApplication.getBaiduFacePackage().getBaiduFaceModule().sendFaceDetectExpBase64Img(faceCheckResult);
             
         } else if (status == FaceStatusEnum.Error_DetectTimeout ||
                 status == FaceStatusEnum.Error_LivenessTimeout ||
