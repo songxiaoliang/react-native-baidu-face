@@ -389,6 +389,21 @@ faceCheckCallback(data) {
 }
 ```
 
+###### 4. 注册监听，接收Detect采集结果(收集结果为base64图片格式)
+
+```javascript
+componentDidMount() {
+   NativeModule.addListener('DetectFaceCheckHelper', (data) => this.detectFaceCheckCallback(data));
+}
+
+/**
+* 人脸检测结果
+*/
+detectFaceCheckCallback(data) {
+	
+}
+```
+
 
 人脸识别模块基于Native层进行封装，即要从Native层进行配置。关于配置的详细流程可以参考百度人脸识别SDK官方文档：
 ```xml
